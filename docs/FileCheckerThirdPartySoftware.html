@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <style>
+      body {
+        margin: 20px;
+        font-size: 11pt;
+        font-family: Tahoma, arial, sans-serif;
+        color: #000000;
+        background-color: #FFFFFF;
+        text-align: left;
+      }
+
+      h1 {
+        font-size: 20pt;
+        font-weight: normal;
+      }
+
+      h1 img {
+        vertical-align: bottom;
+        padding-bottom: 2px;
+      }
+
+      h2 {
+        height: 30px;
+        line-height: 30px;
+        text-align: left;
+        background-color: #E5E5E5;
+        font-size: 11pt;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size: 11pt;
+        padding-top: 5pt;
+        padding-left: 18pt;
+      }
+
+      table {
+        width: 100%;
+        border: 1px solid #E5E5E5;
+        margin-bottom: 15pt;
+        margin-top: 15pt;
+        border-spacing: 0;
+      }
+
+      li {
+        list-style-image: url("data:image/gif;base64,R0lGODlhCwAJAIcAAAAAAJCQkJCQo6OQkKOQo5CjyaOjycnt///tye3//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAD/ACwAAAAACwAJAAAIMgARGEjwr6DBgggGBChA8OC/hAEiMjwIMaLEhhUtXswYUcABhAo7fjQI0aPDhwRGngwIADs=")
+      }
+
+      table.head {
+        width: 100%;
+        background-color: #E5E5E5;
+        border-color: White;
+        border-width: 0;
+        text-align: center;
+        color: #000000;
+      }
+
+
+      .VectorLogo {
+        width: 130px;
+      }
+
+      .caption {
+        height: 30px;
+        line-height: 30px;
+        text-align: left;
+        background-color: #E5E5E5;
+        font-size: 11pt;
+        font-weight: bold;
+      }
+
+      .where:before {
+        content: "Context: ";
+      }
+
+      .where {
+        font-size: 9pt;
+        font-style: normal;
+        display: block;
+        width: 65em;
+        padding-bottom: 5pt;
+      }
+
+      td,
+      th {
+        vertical-align: top;
+        border: 1px solid #E5E5E5;
+        border-spacing: 0;
+        font-size: 11pt;
+      }
+
+      .license-component-details {
+        font-weight: bold;
+      }
+
+    </style>
+    <title>DaVinci AUTOSAR File Checker - Third Party Software</title>
+  </head>
+
+  <body>
+    <table style="border: 0px; border-spacing: 2px;">
+      <tbody>
+        <tr>
+          <td style="border: 0px">
+            <h1><img
+                src="data:image/gif;base64,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"
+                alt="Vector Logo">&nbsp;&nbsp;&nbsp;
+              <span>DaVinci AUTOSAR File Checker - Third Party Software</span>
+            </h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>This Notice file represents the best efforts of Vector Informatik to list the Third-Party components and licenses used in this product.<br></p>
+    <p>If the license conditions allow it, you can request the source code (including changes) via support@vector.com.</p>
+     <p>This file is structured in the following parts:
+        </p>
+        <ul>
+          <li><a href="#Components">Components</a>: A list of all components with used versions and applicable licenses</li>
+          <li><a href="#Licenses">Licenses</a>: The full license texts of the applicable licenses</li>
+          <li><a href="#CopyAndNotice">Copyright Data and Notices</a></li>
+          
+        </ul>
+      <p>
+    </p>
+    <div class="col-md-12">
+      <h1 id="Components">Components</h1>
+      <table class="table backgrid notices-component-table">
+        <thead>
+          <tr>
+            <th scope="col" class="renderable">Component</th>
+            <th scope="col" class="renderable">License</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+                    <td class="renderable"><a href="#COM_dd435f81c1b07c6fc20e15bfb7aabe5eebd88ea4f8a26bcd9004419b1ed87922"><span class="project-version">
+                      <span class="project-name">NETStandard.Library</span> <span class="version-name">2.0.0</span>
+                    </span></a></td>
+                    <td class="renderable">
+              <div class="license-name"><a href="#LIC_abb2896dc3c2a9402f901b88d5035cf0a83d5cf7c17e73642cdf562b0b9d3bc5">MIT License</a></div>
+            </td>
+            </tr>
+          <!--
+          <tr>
+            <td class="renderable"><span class="project-version"><span class="project-name">@angular/animations</span><span
+                  class="version-name">10.2.4</span></span></td>
+            <td class="renderable">
+              <div class="license-name">MIT License</div>
+            </td>
+          </tr>
+          -->
+        </tbody>
+      </table>
+      <h1 id="Licenses">Licenses</h1>
+      <h2 id="LIC_abb2896dc3c2a9402f901b88d5035cf0a83d5cf7c17e73642cdf562b0b9d3bc5">MIT License</h2>
+                <div class="license-component-details text-muted">NETStandard.Library 2.0.0</div>
+                <pre>The MIT License
+===============
+
+Copyright (c) &lt;year&gt; &lt;copyright holders&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
+                <h1 id="CopyAndNotice">Copyright Data and Notices</h1>
+      <h2 id="COM_dd435f81c1b07c6fc20e15bfb7aabe5eebd88ea4f8a26bcd9004419b1ed87922">NETStandard.Library 2.0.0</h2>
+                            <h3>Copyrights</h3>
+                <ul>
+                <li class="copyright">Copyright (c) .NET Foundation and Contributors</li>
+                    </ul>
+                
+      </div>
+  </body>
+</html>
